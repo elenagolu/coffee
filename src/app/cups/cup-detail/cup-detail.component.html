@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img [src]="cup.imagePath" alt="{{ cup.name }}" class="img-responsive" style="max-height: 200px;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3>{{ cup.name }}</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+            <button type="button" class="btn btn-primary" (click)="onAdd()">To shopping list</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{ cup.desc }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor=" let ingredient of cup.ing">
+                {{ ingredient.name }} ({{ ingredient.amount }})
+            </li>
+        </ul>
+    </div>
+</div>
