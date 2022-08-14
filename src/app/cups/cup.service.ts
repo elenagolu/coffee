@@ -31,6 +31,10 @@ export class CupService {
         return this.cups.slice();
     }
 
+    getCups(index: number) {
+        return this.cups[index];
+    }
+
     addIngToSL(ing: Ingredient[]) {
         this.shoppingListService.addIngs(ing);
     }

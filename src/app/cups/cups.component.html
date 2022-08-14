@@ -1,9 +1,8 @@
 <div class="row">
     <div class="col-md-5">
-        <app-cup-list (cupWasSelected)="selectedCup = $event"></app-cup-list>
+        <app-cup-list></app-cup-list>
     </div>
     <div class="col-md-7">
-        <app-cup-detail *ngIf="selectedCup; else pleaseSelect" [cup]="selectedCup"></app-cup-detail>
-        <ng-template #pleaseSelect>Please select a Cup!</ng-template>
+        <router-outlet></router-outlet>
     </div>
 </div>

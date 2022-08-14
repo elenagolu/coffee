@@ -10,6 +10,9 @@ import { CupItemComponent } from './cups/cup-list/cup-item/cup-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { FirstCupComponent } from './cups/first-cup/first-cup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,12 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     CupItemComponent,
     ShoppingListComponent,
     ShoppingListEditComponent,
+    FirstCupComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Cup } from '../../cup.model';
 
 @Component({
@@ -8,14 +8,8 @@ import { Cup } from '../../cup.model';
 })
 export class CupItemComponent implements OnInit {
   @Input() cup: Cup;
-  @Output() cupSelected = new EventEmitter<void>();
-
-  constructor() { }
+  @Input() index: number;
 
   ngOnInit() { }
-
-  onSelected() {
-    this.cupSelected.emit();
-  }
 
 }

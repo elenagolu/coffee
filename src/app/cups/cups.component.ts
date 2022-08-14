@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Cup } from './cup.model';
 import { CupService } from './cup.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { CupService } from './cup.service';
   providers: [CupService],
 })
 export class CupsComponent implements OnInit {
-  selectedCup: Cup;
 
   constructor() { }
 

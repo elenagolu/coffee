@@ -1,5 +1,5 @@
 <div class="row">
     <div class="col-xs-12">
-        <app-cup-item *ngFor="let cupMMM of cups" [cup]="cupMMM" (cupSelected)="onCupSelected(cupMMM)"></app-cup-item>
+        <app-cup-item *ngFor="let cupMMM of cups; let i = index" [cup]="cupMMM" [index]="i"></app-cup-item>
     </div>
 </div>

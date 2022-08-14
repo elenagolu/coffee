@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Cup } from '../cup.model';
 import { CupService } from '../cup.service';
 
@@ -8,11 +9,20 @@ import { CupService } from '../cup.service';
   styleUrls: ['./cup-detail.component.css']
 })
 export class CupDetailComponent implements OnInit {
-  @Input() cup: Cup;
+  cup: Cup;
+  id: number;
 
-  constructor(private cupService: CupService) { }
+  constructor(
+    private cupService: CupService,
+    private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.cup = this.cupService.getCups(this.id);
+      }
+    );
   }
 
   onAdd() {
